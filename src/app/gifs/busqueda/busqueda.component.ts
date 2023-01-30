@@ -5,11 +5,11 @@ import { Component, ElementRef, ViewChild } from '@angular/core';
   templateUrl: './busqueda.component.html',
 })
 export class BusquedaComponent {
-  @ViewChild('txtBuscar') txtBuscar!:ElementRef;
+  @ViewChild('txtBuscar') txtBuscar!:ElementRef<HTMLInputElement>;
 
   buscar() {
     const valor = this.txtBuscar.nativeElement.value;
     console.log(valor);
-    
+    this.txtBuscar.nativeElement.value = '';
   }
 }
